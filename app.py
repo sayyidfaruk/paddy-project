@@ -20,10 +20,16 @@ class ExpertSystem:
             self.facts.append(fact)
 
     def infer(self):
+        highest_prob_rule = None
+        highest_prob = 0
         for rule in self.rules:
-            if all(fact in self.facts for fact in rule["if"]):
-                return rule["then"]
-        return "Penyakit tidak diketahui"
+            match_count = sum(1 for fact in rule["if"] if fact in self.facts)
+            total_count = len(rule["if"])
+            probability = (match_count / total_count) * 100
+            if probability > highest_prob:
+                highest_prob = probability
+                highest_prob_rule = {"penyakit": rule["then"], "probabilitas": probability}
+        return highest_prob_rule
 
 questions = [
     {"code": "G001", "question": "Ada kehadiran wereng?"},
