@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagnosa Penyakit Tanaman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 600px;
+            max-width: 800px;
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        .options label {
+            font-size: 1rem;
+            color: #555;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .options label:before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        .options input[type="radio"]:checked + label:before {
+            background: #007bff;
+        }
+    </style>
+    <script>
+        function submitForm() {
+            document.getElementById('questionForm').submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Diagnosa Penyakit Tanaman</h1>
+        <form id="questionForm" method="POST">
+            <input type="hidden" name="code" value="{{ code }}">
+            <div class="question">{{ question }}</div>
+            <div class="options">
+                <div>
+                    <input type="radio" name="answer" value="iya" id="iya" onclick="submitForm()" required> 
+                    <label for="iya">Iya</label>
+                </div>
+                <div>
+                    <input type="radio" name="answer" value="tidak" id="tidak" onclick="submitForm()"> 
+                    <label for="tidak">Tidak</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
