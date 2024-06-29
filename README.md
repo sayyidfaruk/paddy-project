@@ -4,12 +4,12 @@ Sistem Pakar Penyakit Padi adalah sebuah aplikasi web sederhana yang menggunakan
 
 ## Penyakit yang Didukung
 
-- Hawar Daun
 - Tungro
-- Busuk Akar
-- hawar Bakteri
-- virus kerdil
-- Penyakit tidak diketahui (jika gejala tidak cocok dengan penyakit yang ada)
+- Kerdil Rumput
+- Kerdil Hampa
+- Daun Jingga
+- Kerdil Kuning
+- Hawar Daun Bakteri
 
 ## Instalasi
 
@@ -57,8 +57,7 @@ Sistem Pakar Penyakit Padi adalah sebuah aplikasi web sederhana yang menggunakan
 
 1. Buka aplikasi di browser.
 2. Masukkan gejala-gejala yang dialami oleh tanaman padi Anda.
-3. Klik tombol "Diagnosa".
-4. Aplikasi akan menampilkan hasil diagnosa berdasarkan gejala yang Anda masukkan.
+3. Aplikasi akan menampilkan hasil diagnosa berdasarkan gejala yang Anda masukkan.
 
 ---
 
